@@ -67,5 +67,5 @@ func main() {
 	http.HandleFunc("/", index_handler)
 	http.Handle("/file/", http.StripPrefix("/file/", http.FileServer(http.Dir("./storage"))))
 	glog.Info("Web OK.")
-	log.Fatal(http.ListenAndServe(":5000", nil))
+	log.Fatal(http.ListenAndServe("", nil))
 }
